@@ -1,0 +1,26 @@
+{
+  "name": "lg-insert",
+  "version": "0.0.5",
+  "description": "node.js interface to handle database insertion",
+  "main": "lg-insert.js",
+  "dependencies": {
+    "bluebird": "^2.3.0",
+    "lodash": "^2.4.1",
+    "pg-copy-streams": "^0.2.4",
+    "pg.js": "^3.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rwilhelm/lg-insert.git"
+  },
+  "author": "René Wilhelm",
+  "license": "GPL-v2",
+  "bugs": {
+    "url": "https://github.com/rwilhelm/lg-insert/issues"
+  },
+  "homepage": "https://github.com/rwilhelm/lg-insert"
+}
