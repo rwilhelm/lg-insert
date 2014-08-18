@@ -31,6 +31,7 @@
 		.pipe(converter)
 		// .pipe(validator)
 		.pipe(inserter)
+		// .pipe(statistics)
 		.pipe(stdout);
 
 }());

@@ -1,6 +1,59 @@
 (function(){
 	'use strict';
 
+	var columns = {
+		sensor: [
+			{name: 'trip_id', dataType: 'int'},
+			{name: 'ts',      dataType: 'bigint'},
+		],
+
+		motion: [
+			{name: 'x', dataType: 'float'},
+			{name: 'y', dataType: 'float'},
+			{name: 'z', dataType: 'float'}
+		],
+
+		proximity: [
+			{name: 'key', dataType: 'text'},
+			{name: 'inside', dataType: 'boolean'},
+			{name: 'of', dataType: 'text'}
+		],
+
+		gps: [
+			{name: 'lonlat', dataType: 'geography(Point)'},
+		],
+
+		tag: [
+			{name: 'tag', dataType: 'text'},
+		],
+
+		activity: [
+			{name: 'activity', dataType: 'text'},
+		],
+	};
+
+	var sensorTables = {
+		ACC:  { name: 'accelerometer',       columns: columns.motion    },
+		GRA:  { name: 'gravity',             columns: columns.motion    },
+		GYR:  { name: 'gyroscope',           columns: columns.motion    },
+		LAC:  { name: 'linear_acceleration', columns: columns.motion    },
+		MAG:  { name: 'magnetic_field',      columns: columns.motion    },
+		ROT:  { name: 'rotation',            columns: columns.motion    },
+		GPS:  { name: 'gps',                 columns: columns.gps       },
+		TAG:  { name: 'tags',                columns: columns.tag       },
+		ACT:  { name: 'har',                 columns: columns.tag       },
+		GACT: { name: 'google_activity',     columns: columns.activity  },
+		PRX:  { name: 'proximity',           columns: columns.proximity },
+	};
+
+	exports.sensors = sensorTables;
+	// exports.columns = sensorTableColumns;
+
+
+
+
+
+	/*
 	var tables = [
 
 		// TRIPS
@@ -34,6 +87,8 @@
 	];
 
 	var columns = {
+
+		// BASE COLUMNS
 
 		trip: [
 			{name: 'trip_id',  dataType: 'serial primary key'},
@@ -95,6 +150,8 @@
 	exports.columns = columns;
 	exports.indices = indices;
 	exports.views = views;
+	*/
+
 }());
 
 
