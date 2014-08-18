@@ -30,7 +30,7 @@
 		.pipe(liner)
 		.pipe(converter)
 		// .pipe(validator)
-		// .pipe(inserter)
+		.pipe(inserter)
 		.pipe(stdout);
 
 }());

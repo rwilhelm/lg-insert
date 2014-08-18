@@ -1,3 +1,5 @@
 _playground/*
 node_modules
 _trash
+sql-definitions-local.js
+sql-definitions-remote.js
