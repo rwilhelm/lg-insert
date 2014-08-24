@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 // http://strongloop.com/strongblog/practical-examples-of-the-new-node-js-streams-api/
+// https://github.com/substack/stream-handbook
 
 (function() {
 	'use strict';
@@ -13,25 +14,22 @@
 
 	// custom stream handlers
 	var liner = require('./lib/liner'), // read input linewise as stream
-	    converter = require('./lib/converter'), // convert ssf to jsf
-	    validator = require('./lib/validator'), // validate data
-	    inserter = require('./lib/inserter'), // insert data into database
-	    cat = require('./lib/cat'), // insert data into database
+	    analyzer = require('./lib/analyzer'), // do something
+	    tables = require('./lib/tables'), // do something
+	    database = require('./lib/database'), // do something
+	    cat = require('./lib/cat'), // do nothing
 	    stdout = require('./lib/stdout'); // print data to stdout
 
 	// gunzip if neccessary
 	if (!source.path.match('\\.gz$')) gunzip = cat;
 
-	// convert from ssf (old file format) to jsf if neccessary
-	if (false) converter = cat;
+	database.tables().then(function(data) {
+		source
+			.pipe(gunzip)
+			.pipe(liner)
+			.pipe(tables(data));
+			// .pipe(process.stdout);
+	});
 
-	source
-		.pipe(gunzip)
-		.pipe(liner)
-		.pipe(converter)
-		// .pipe(validator)
-		.pipe(inserter)
-		// .pipe(statistics)
-		.pipe(stdout);
 
 }());
