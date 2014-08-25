@@ -1,13 +1,15 @@
 {
   "name": "lg-insert",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "description": "node.js interface to handle database insertion",
   "main": "lg-insert.js",
   "dependencies": {
     "bluebird": "^2.3.0",
+    "chalk": "^0.5.1",
     "lodash": "^2.4.1",
     "pg-copy-streams": "^0.2.4",
-    "pg.js": "^3.4.2"
+    "pg.js": "^3.4.2",
+    "sql": "^0.39.0"
   },
   "devDependencies": {},
   "scripts": {

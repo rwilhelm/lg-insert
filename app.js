@@ -15,21 +15,21 @@
 	// custom stream handlers
 	var liner = require('./lib/liner'), // read input linewise as stream
 	    analyzer = require('./lib/analyzer'), // do something
-	    tables = require('./lib/tables'), // do something
 	    database = require('./lib/database'), // do something
-	    cat = require('./lib/cat'), // do nothing
-	    stdout = require('./lib/stdout'); // print data to stdout
+	    tables = require('./lib/tables'), // do something
+	    copy = require('./lib/copy'), // do something
+	    cat = require('./lib/cat'); // do something
 
 	// gunzip if neccessary
 	if (!source.path.match('\\.gz$')) gunzip = cat;
 
-	database.tables().then(function(data) {
-		source
-			.pipe(gunzip)
-			.pipe(liner)
-			.pipe(tables(data));
-			// .pipe(process.stdout);
+	database.trip.table().then(function(data) {
+		database.tables().then(function(data) {
+			source
+				.pipe(gunzip)
+				.pipe(liner)
+				.pipe(tables(data));
+		});
 	});
-
 
 }());
