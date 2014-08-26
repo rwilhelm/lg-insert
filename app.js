@@ -14,10 +14,8 @@
 
 	// custom stream handlers
 	var liner = require('./lib/liner'), // read input linewise as stream
-	    analyzer = require('./lib/analyzer'), // do something
 	    database = require('./lib/database'), // do something
-	    tables = require('./lib/tables'), // do something
-	    copy = require('./lib/copy'), // do something
+	    inserter = require('./lib/inserter'), // do something
 	    cat = require('./lib/cat'); // do something
 
 	// gunzip if neccessary
@@ -28,7 +26,7 @@
 			source
 				.pipe(gunzip)
 				.pipe(liner)
-				.pipe(tables(data));
+				.pipe(inserter(data));
 		});
 	});
 

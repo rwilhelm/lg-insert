@@ -1,8 +1,8 @@
 {
-  "name": "lg-insert",
+  "name": "lg-parse",
   "version": "0.2.0",
   "description": "node.js interface to handle database insertion",
-  "main": "lg-insert.js",
+  "main": "app.js",
   "dependencies": {
     "bluebird": "^2.3.0",
     "chalk": "^0.5.1",
