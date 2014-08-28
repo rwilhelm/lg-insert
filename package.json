@@ -1,28 +1,30 @@
 {
   "name": "lg-parse",
-  "version": "0.2.0",
-  "description": "node.js interface to handle database insertion",
+  "version": "0.2.1",
+  "description": "livegov parser: parse .ssf into database",
   "main": "app.js",
   "dependencies": {
-    "bluebird": "^2.3.0",
+    "bluebird": "^2.3.2",
     "chalk": "^0.5.1",
     "lodash": "^2.4.1",
     "pg-copy-streams": "^0.2.4",
     "pg.js": "^3.4.2",
     "sql": "^0.39.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^1.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rwilhelm/lg-insert.git"
+    "url": "https://github.com/rwilhelm/lg-parse.git"
   },
   "author": "René Wilhelm",
   "license": "GPL-v2",
   "bugs": {
-    "url": "https://github.com/rwilhelm/lg-insert/issues"
+    "url": "https://github.com/rwilhelm/lg-parse/issues"
   },
-  "homepage": "https://github.com/rwilhelm/lg-insert"
+  "homepage": "https://github.com/rwilhelm/lg-parse"
 }

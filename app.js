@@ -14,9 +14,9 @@
 
 	// custom stream handlers
 	var liner = require('./lib/liner'), // read input linewise as stream
-	    database = require('./lib/database'), // do something
-	    inserter = require('./lib/inserter'), // do something
-	    cat = require('./lib/cat'); // do something
+	    database = require('./lib/database'), // db queries
+	    inserter = require('./lib/inserter'), // parse line and insert into db
+	    cat = require('./lib/cat'); // do nothing
 
 	// gunzip if neccessary
 	if (!source.path.match('\\.gz$')) gunzip = cat;
